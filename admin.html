@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faisal Mobile | Admin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-page">
+<header>
+  <div class="logo">Faisal <span>Mobile</span> <small>ADMIN</small></div>
+  <nav><a href="index.html">View Website</a></nav>
+</header>
+
+<main class="admin-wrap">
+  <section id="loginBox" class="admin-card">
+    <h1>Admin Login</h1>
+    <p class="muted">Sign in to manage your mobile products.</p>
+    <form id="loginForm">
+      <label>Email<input id="email" type="email" required placeholder="Admin email"></label>
+      <label>Password<input id="password" type="password" required placeholder="Password"></label>
+      <button class="btn full" type="submit">Login</button>
+      <div id="loginMsg" class="message"></div>
+    </form>
+  </section>
+
+  <section id="panel" class="admin-card hidden">
+    <div class="panel-head">
+      <div><h1>Product Manager</h1><p class="muted">Add, edit, delete and manage your phones.</p></div>
+      <button id="logoutBtn" class="btn danger">Logout</button>
+    </div>
+
+    <form id="productForm" class="product-form">
+      <input type="hidden" id="productId">
+      <label>Brand<input id="brand" required placeholder="e.g. Samsung"></label>
+      <label>Model / Name<input id="name" required placeholder="e.g. Galaxy A15"></label>
+      <label>Price<input id="price" required placeholder="e.g. Rs. 45,000"></label>
+      <label>Short description<input id="description" placeholder="e.g. 8GB RAM • 256GB"></label>
+      <label>WhatsApp message<input id="waText" placeholder="Optional custom message"></label>
+      <label>Product image<input id="image" type="file" accept="image/*"></label>
+      <div id="imagePreview" class="image-preview"></div>
+      <label class="check"><input id="available" type="checkbox" checked> Available in stock</label>
+      <div class="form-actions">
+        <button class="btn" type="submit">Save Product</button>
+        <button id="cancelEdit" class="btn secondary" type="button">Clear</button>
+      </div>
+      <div id="productMsg" class="message"></div>
+    </form>
+
+    <h2 class="section-subtitle">Your Products</h2>
+    <div id="adminProducts" class="admin-products">Loading...</div>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
